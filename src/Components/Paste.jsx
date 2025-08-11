@@ -25,6 +25,7 @@ const Paste = () => {
         placeholder="Search Here..."
         value={searchTerm}
         onChange={(e) => setsearchTerm(e.target.value)}
+        required
       />
       <div className="border-2 w-[80%] mt-2 border-[#e5e7eb] rounded-t-xl pl-[20px] py-2 font-bold text-[50px]">
         <h1>All Paste</h1>

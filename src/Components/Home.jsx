@@ -33,6 +33,17 @@ const Home = () => {
 }, [pasteId, allpaste]);
 
   function createPaste(){
+    // Validation checks
+    if (title.trim().length < 3) {
+      toast.error("Title must be at least 3 characters long");
+      return;
+    }
+    
+    if (value.trim().length < 15) {
+      toast.error("Description must be at least 15 characters long");
+      return;
+    }
+
     const paste ={
         title: title,
         content: value,
@@ -64,6 +75,7 @@ const Home = () => {
           placeholder="Enter Title Here"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
         <button
           onClick={createPaste}
@@ -101,6 +113,7 @@ const Home = () => {
           placeholder="Enter Content Here..."
           onChange={(e) => setvalue(e.target.value)}
           rows={20}
+          required
         />
       </div>
     </div>
